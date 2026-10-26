@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <aside class="col-md-2 bg-white border-end min-vh-100 p-3">
+      <h6 class="text-muted">ADMIN</h6>
+      <div class="d-grid gap-2">
+        <a mat-stroked-button routerLink="dashboard" routerLinkActive="active-link"><mat-icon>dashboard</mat-icon> Dashboard</a>
+        <a mat-stroked-button routerLink="products" routerLinkActive="active-link"><mat-icon>inventory_2</mat-icon> Products</a>
+        <a mat-stroked-button routerLink="products/new"><mat-icon>add</mat-icon> Add Product</a>
+      </div>
+    </aside>
+    <main class="col-md-10 p-4">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

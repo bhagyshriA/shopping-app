@@ -1,0 +1,28 @@
+<h3 class="mb-4">Dashboard</h3>
+
+<div class="row g-3 mb-4">
+  <div class="col-sm-6 col-lg-3"><mat-card><mat-card-content>
+    <small class="text-muted">Products</small><h2>{{ products.length }}</h2>
+  </mat-card-content></mat-card></div>
+  <div class="col-sm-6 col-lg-3"><mat-card><mat-card-content>
+    <small class="text-muted">Categories</small><h2>{{ categoryCount }}</h2>
+  </mat-card-content></mat-card></div>
+  <div class="col-sm-6 col-lg-3"><mat-card><mat-card-content>
+    <small class="text-muted">Total Stock</small><h2>{{ totalStock }}</h2>
+  </mat-card-content></mat-card></div>
+  <div class="col-sm-6 col-lg-3"><mat-card><mat-card-content>
+    <small class="text-muted">Inventory Value</small><h2>{{ inventoryValue | currency }}</h2>
+  </mat-card-content></mat-card></div>
+</div>
+
+<mat-card>
+  <mat-card-title class="p-3">Low stock (under 15)</mat-card-title>
+  <mat-card-content>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item d-flex justify-content-between" *ngFor="let p of lowStock">
+        {{ p.name }} <span class="badge bg-danger">{{ p.stock }}</span>
+      </li>
+    </ul>
+    <p *ngIf="!lowStock.length" class="text-muted p-3">Nothing running low.</p>
+  </mat-card-content>
+</mat-card>
